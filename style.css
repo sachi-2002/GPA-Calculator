@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.mainDiv {
+    width: 25vw;
+    height: 65vh;
+    background-color: black;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: space-between; /* Adjust spacing */
+}
+
+.inRes {
+    width: 70%;
+    height: 40px;
+    text-align: center;
+    font-size: large;
+}
+
+.sendBtn {
+    width: 20%;
+    height: 40px;
+    margin-left: 10px;
+    background-color: rgb(82, 255, 47);
+}
+
+.gpa{
+    color: blue;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.givenIn{
+    width: 100%;
+    height: 40%;
+    color: blueviolet;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    justify-items: center; 
+    align-items: center;
+}
+
+.grade{
+    margin-bottom: 10px;
+    border: solid;
+    border-color: aqua;
+    width: 50%;
+    height: 40px;
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Centers text vertically */
+    text-align: center; /* Ensures text is centered */
+}
+
+.resultsInputs{
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(3, 1fr); /* 3 rows */
+    justify-items: center; 
+    align-items: center;
+}
+
+.resBtn{
+    color: black;
+    width: 80%;
+    height: 75%;
+}
