@@ -18,6 +18,6 @@ function resultsAdder(v) {
         }
     }
 
-    gpaVal.innerHTML = gpa / subCount;
+    gpaVal.innerHTML = Math.round(gpa / subCount * 100) / 100;
 
 }
