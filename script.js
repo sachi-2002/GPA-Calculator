@@ -21,3 +21,16 @@ function resultsAdder(v) {
     gpaVal.innerHTML = Math.round(gpa / subCount * 100) / 100;
 
 }
+
+function clearAll() {
+    let res = document.getElementById("givenIn");
+    res.innerHTML = "";
+    let gpaVal = document.getElementById("gpaVal");
+    gpaVal.innerHTML = "0.0";
+    gpa = 0;
+    subCount = 0;
+}
+
+function deleteLast(){
+    
+}
