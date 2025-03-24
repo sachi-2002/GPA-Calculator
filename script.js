@@ -31,6 +31,12 @@ function clearAll() {
     subCount = 0;
 }
 
-function deleteLast(){
-    
+function deleteInputs(){
+    let res = document.getElementById("givenIn");
+    let labels = res.getElementsByTagName("label");
+    if (labels.length > 0) {
+        let lastLabel = labels[labels.length - 1];  
+        lastLabel.remove();
+    }
+   
 }
