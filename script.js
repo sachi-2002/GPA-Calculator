@@ -2,13 +2,13 @@ let gpa = 0;
 let subCount = 0;
 let GPA = 0;
 
+let grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "E"];
+let gpaValues = [4.0, 4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.3, 1.0, 0.0];
+
 function resultsAdder(v) {
     let res = document.getElementById("givenIn");
     let labels = res.getElementsByTagName("label");
     let gpaVal = document.getElementById("gpaVal");
-
-    let grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "E"];
-    let gpaValues = [4.0, 4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.3, 1.0, 0.0];
 
     if (labels.length != 12) {
         if (v >= 1 && v <= 12) {
@@ -31,12 +31,24 @@ function clearAll() {
     subCount = 0;
 }
 
-function deleteInputs(){
+
+function deleteInputs() {
     let res = document.getElementById("givenIn");
     let labels = res.getElementsByTagName("label");
+    let gpaVal = document.getElementById("gpaVal");
+
     if (labels.length > 0) {
-        let lastLabel = labels[labels.length - 1];  
-        lastLabel.remove();
+        let lastLabel = labels[labels.length - 1];
+        let gradeText = lastLabel.innerText;
+        
+        let index = grades.indexOf(gradeText);
+        if (index !== -1) {
+            gpa -= gpaValues[index]; 
+            subCount--; 
+        }
+
+        lastLabel.remove(); 
+
+        gpaVal.innerHTML = subCount > 0 ? (Math.round(gpa / subCount * 100) / 100).toFixed(2) : "0.0";
     }
-   
 }
