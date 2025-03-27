@@ -12,13 +12,17 @@ function resultsAdder(v) {
 
     if (labels.length != 12) {
         if (v >= 1 && v <= 12) {
-            res.innerHTML += `<label class="grade">${grades[v - 1]}</label>`;
-            gpa = gpa + gpaValues[v - 1];
-            subCount++;
+            let choice = prompt("Enter credit value: 0,1,2,3,4");
+            if (choice >= 0 && choice <= 4) {
+                res.innerHTML += `<label class="grade">${grades[v - 1]}</label>`;
+                gpa = gpa + gpaValues[v - 1];
+                subCount++;
+                gpaVal.innerHTML = Math.round(gpa / subCount * 100) / 100;
+            } else {
+                alert("Wrong input !");
+            }
         }
     }
-
-    gpaVal.innerHTML = Math.round(gpa / subCount * 100) / 100;
 
 }
 
@@ -40,14 +44,14 @@ function deleteInputs() {
     if (labels.length > 0) {
         let lastLabel = labels[labels.length - 1];
         let gradeText = lastLabel.innerText;
-        
+
         let index = grades.indexOf(gradeText);
         if (index !== -1) {
-            gpa -= gpaValues[index]; 
-            subCount--; 
+            gpa -= gpaValues[index];
+            subCount--;
         }
 
-        lastLabel.remove(); 
+        lastLabel.remove();
 
         gpaVal.innerHTML = subCount > 0 ? (Math.round(gpa / subCount * 100) / 100).toFixed(2) : "0.0";
     }

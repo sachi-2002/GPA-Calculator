@@ -4,10 +4,27 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: white;
+}
+
+.MD {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.NameGPA {
+    font-size: 38px;
+    font-family: monospace;
+}
+
+.nameDiv {
+    margin-bottom: 15px;
 }
 
 .mainDiv {
-    width: 25vw;
+    width: 25%;
     height: 65vh;
     border-radius: 10px;
     background-color: black;
@@ -44,14 +61,38 @@ body {
     font-family: 'Courier New';
 }
 
-.givenIn {
+.givenInM {
     width: 100%;
     height: 40%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.givenIn {
+    padding-top: 10px;
+    width: 100%;
+    height: 70%;
     color: blueviolet;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     justify-items: center;
     align-items: center;
+    background-color: rgb(203, 203, 203);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.creditInputs {
+    width: 100%;
+    height: 30%;
+    border: solid;
+    border-width: 2px;
+    border-color: black;
+    background-color: rgb(203, 203, 203);
 }
 
 .grade {
@@ -64,7 +105,7 @@ body {
     text-align: center;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(#9cd2ff, #9ffaf6);
+    background-image: radial-gradient( circle farthest-corner at 48.4% 47.5%,  rgba(122,183,255,1) 0%, rgba(21,83,161,1) 90% );
     color: black;
     font-family: sans-serif;
     font-weight: 700;
@@ -111,7 +152,7 @@ body {
     font-size: 28px;
 }
 
-.cancelBtn:hover{
+.cancelBtn:hover {
     background-color: rgba(255, 0, 0, 0.71);
 }
 
@@ -133,21 +174,50 @@ body {
     background-color: rgb(5, 205, 5);
 }
 
-.clearBtn:hover{
+.clearBtn:hover {
     background-color: rgb(0, 165, 0);
 }
 
-.clearImg{
+.clearImg {
     width: 90%;
     background-repeat: no-repeat;
     background-position: center;
-    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0)); 
+    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
+}
+
+@media (max-width: 2560px) {
+    .mainDiv {
+        width: 95%;
+        max-width: 380px;
+    }
+
+    .givenInM {
+        width: 100%;
+        height: 38%;
+        margin-top: 2.5%;
+    }
+
+    .givenIn,
+    .creditInputs {
+        width: 95%;
+    }
 }
 
 @media (max-width: 1024px) {
     .mainDiv {
         width: 95%;
         max-width: 380px;
+    }
+
+    .givenInM {
+        width: 100%;
+        height: 40%;
+        margin-top: 2.5%;
+    }
+
+    .givenIn,
+    .creditInputs {
+        width: 95%;
     }
 }
 
@@ -164,5 +234,8 @@ body {
         width: 95%;
         max-width: 280px;
     }
-}
 
+    .NameGPA {
+        font-size: 32px;
+    }
+}
