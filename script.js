@@ -12,15 +12,13 @@ function resultsAdder(v) {
 
     if (res.children.length != 12) {
         if (v >= 1 && v <= 12) {
-            let choice = prompt("Enter credit value (0-4): if non-credit one just ok");
+            let choice = prompt("Enter credit value (1-4): ");
             let credit = Number(choice);
 
-            if (choice === "") {
-               alert("It is non-credit subject!");
-            } else if (credit >= 1 && credit <= 4) {
+            if (credit >= 1 && credit <= 4) {
                 gpaAdd(v, credit);
             } else {
-                alert("Invalid credit value! Enter a number between 0 and 4.");
+                alert("Invalid credit value! Enter a number between 1 and 4.");
             }
         }
     }

@@ -234,6 +234,7 @@ body {
     .mainDiv {
         width: 95%;
         max-width: 380px;
+        height: 70vh;
     }
 
     .givenInM {
@@ -253,6 +254,7 @@ body {
         width: 95%;
         max-width: 320px;
         padding: 15px;
+        height: 69vh;
     }
 }
 
@@ -260,6 +262,7 @@ body {
     .mainDiv {
         width: 95%;
         max-width: 280px;
+        height: 68vh;
     }
     .NameGPA {
         font-size: 32px;
